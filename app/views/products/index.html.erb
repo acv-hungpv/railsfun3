@@ -1,0 +1,11 @@
+<table>
+<% @products.each do |product| %>
+	<tr>
+		<td> <%= link_to product.title, product_path(product) %> </td>
+		<td> <%= product.category.try(:name) %></td>
+		<td> <%= product.price %></td>
+	</tr>
+<% end %>
+</table>
+
+<%= link_to('create', new_product_path) %>

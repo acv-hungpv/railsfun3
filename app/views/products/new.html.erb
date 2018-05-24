@@ -1,0 +1,12 @@
+<%= form_for @product do |f| %>
+	<%= f.label :title, '* Title:'%>
+	<%= f.text_field :title %>	
+	<%= @product.errors.full_messages_for(:title).join('<br/>') if @product.errors.include? :title %>
+
+	<%= f.label :description, '* Description:'%>
+	<%= f.text_area :description, size: '60x12' %>	
+	<%= @product.errors.full_messages_for(:description).join('<br/>') if @product.errors.include? :description %>
+	<%= f.label :category, '*Category' %>
+	<%= f.select :category_id, options_for_select(@categories.map {|c| [c.name,c.id]}) %>
+	<%= f.submit 'create' %>
+<% end %>
