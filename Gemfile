@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'simple_form'
+
 gem "slim-rails"
 
 gem 'country_select'
